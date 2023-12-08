@@ -1,0 +1,104 @@
+# Function for count of student absent for test 
+
+def absentSC(listOfStudent, numberOfStudent,roll):
+    ab=[]
+    count = 0
+    for i in range(numberOfStudent):
+        if listOfStudent[i]==0:
+            count +=1
+            ab.append(roll[i])
+    i=0    
+    for i in range(len(ab)):
+      print("Absent Roll No:",ab[i])     
+    return count       
+
+
+# Function for Maximum-------------------------------------------->>
+
+def maxMarks(listOfStudent, numberOfStudent):
+    max = 0
+    for i in range(numberOfStudent):
+        if max<listOfStudent[i]:
+            max = listOfStudent[i]
+
+    return max
+
+
+# Function to calculate largest marks frequency
+
+def largestMFreq(numberOfStudent, listOfStudent):
+    count = 0
+    check = maxMarks(listOfStudent, numberOfStudent)
+    
+    for i in range(numberOfStudent):
+        if check == listOfStudent[i]:
+            count += 1
+    return count
+
+
+# Function for Minimum------------------------------------------->>>
+
+def minMarks(listOfStudent, numberOfStudent):
+    min = listOfStudent[0]
+    for i in range(numberOfStudent):
+        if min>listOfStudent[i]:
+            min = listOfStudent[i]
+    return min    
+
+
+# Function for Average--------------------------------->>>
+
+def averageOfMarks(listOfStudent, numberOfStudent):
+    sumInitialize = 0
+    for i in range(numberOfStudent):
+        sumInitialize += listOfStudent[i]
+
+    return (sumInitialize/numberOfStudent)
+
+
+# main program---->>
+
+loop = True
+listOfStudent = []   
+numberOfStudent = int(input("Enter No of Student: "))
+count = 1
+rn=0
+roll=[]    
+for i in range(numberOfStudent):
+    rn=int(input("Enter Roll No:"))
+    roll.append(rn)  
+    marks = int(input(f"Enter marks for student {count}: "))
+    listOfStudent.append(marks)
+    count+=1
+
+def showList():
+    print("\n--Select Your Choice From Following list---")
+    print("\n 1.Average Score of class")
+    print("\n 2.Highest Score of class")
+    print("\n 3.Lowest Score of class")
+    print("\n 4.List of Abesnt Students")
+    print("\n 5.Marks with Highest Frequency Count")
+    print("\n Enter 0 for Exit Program") 
+showList()
+
+while loop:
+    choice = input("Enter your choice: ")
+    if choice == "1":
+        print("Average marks :",averageOfMarks(listOfStudent, numberOfStudent))
+  
+    elif choice == "2":
+        print("Highest Score of class: ",maxMarks(listOfStudent, numberOfStudent))
+        
+    elif choice == "3":
+        print("Lowest Score of class: ",minMarks(listOfStudent, numberOfStudent))
+    
+    elif choice == "4":
+        print("Number of absent student are: ", absentSC(listOfStudent, numberOfStudent,roll))
+    
+    elif choice == "5":
+       print(f"{maxMarks(listOfStudent, numberOfStudent)} is largest marks and its frequency is: ",largestMFreq(numberOfStudent, listOfStudent))   
+    elif choice == "0":
+        loop = False
+    else:
+        print("You entered wrong choice try again")
+

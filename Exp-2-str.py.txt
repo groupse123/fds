@@ -1,0 +1,63 @@
+s=""
+def fun1(inp):
+    long=[]
+    s=inp.split()
+    for i in (s):
+        if (len(i)>len(long)):
+            long=i
+    print(long)
+
+def fun2(inp):
+    c=input("Enter the charecter of which you wnat to find occurance of in the string:")
+    print("c",c)
+    s=inp.count(c)
+    print(s)
+
+def fun3(inp):
+    pal=inp[ : :-1]
+    if(pal==inp):
+        print("String is palidrome")
+    else:
+        print("String is not palidrome")
+
+def fun4(inp):
+    c=input("Enter the character of which you want index of:'")
+    print("c=",c)
+    s=inp.count(c)
+    print("count =",s)
+
+print(s)
+
+def fun5(inp):
+    s=inp.split()
+    for i in range(len(s)):
+        print(s[i],"=",s.count(s[i]))
+
+inp= input("Enter a string=")
+while True:
+ print("\n 1.Longest length")
+ print("\n 2.Occurance of particular charecter")
+ print("\n 3.Check for palidrome")
+ print("\n 4.Index of first appeard word")
+ print("\n 5.Occurance of each word")
+ print("\n Select your choice")
+ ch= int(input())
+ if(ch==1):
+    fun1(inp)
+
+ elif(ch==2):
+    fun2(inp)
+
+ elif(ch==3):
+    fun3(inp)
+
+ elif(ch==4):
+    fun4(inp)
+
+ elif(ch==5):
+    fun5(inp)
+
+ else:
+    print("Invalid choice!")
+    break
+

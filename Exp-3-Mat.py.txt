@@ -1,0 +1,79 @@
+op=1
+X = [[5,9,3],
+    [8 ,2,6],
+    [1 ,6,9]]
+
+Y = [[3,8,5],
+    [6,5,3],
+    [2,5,3]]
+
+result = [[0,0,0],
+         [0,0,0],
+        [0,0,0]]
+
+print("First Matix:")
+for r in X:
+      print(r)
+print("\nSecond Matrix:")
+for r in Y:
+     print(r)
+
+def addition(): 
+   for i in range(len(X)):
+      for j in range(len(X[0])):
+         result[i][j] = X[i][j] + Y[i][j]
+   print("\nAddition of Given Matrix:")
+   for r in result:
+      print(r)
+
+
+def subtraction():
+   for i in range(len(X)):
+      for j in range(len(X[0])):
+         result[i][j] = X[i][j] - Y[i][j]
+   print("\nSubtraction of Given Matrix:")
+   for r in result:
+      print(r)
+
+def Multiplication():  
+   for i in range(len(X)):
+      for j in range(len(X[0])):
+          for k in range(len(Y)):
+              result[i][j] += X[i][k] * Y[k][j]
+         
+   print("\nMultiplication of Given Matrix:")
+   for r in result:
+      print(r)
+      
+def transpose():
+    print("\ntranspose of given First matrix")
+    for i in range(len(X)):
+        for j in range(len(X[0])):
+            result[j][i]= X[i][j]       
+    for r in result:
+      print(r)             
+
+while(True):
+    print("\nWhich operation You want to perfrom")
+    print("1.Addition")
+    print("2.Subtraction")
+    print("3.Multiplication")
+    print("4.Transpose")
+    choice=(int(input()))
+
+    if(choice==1):
+        addition()
+            
+    elif(choice==2):
+        subtraction()
+                    
+    elif(choice==3):
+        Multiplication()
+
+    elif(choice==4):
+        transpose()
+
+    else:
+        print("Invalid choice");
+        break
+
